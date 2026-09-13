@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NaVault — Privacy Policy</title>
+<meta name="description" content="Privacy policy for NaVault, an offline-first Android vault app.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:    { DEFAULT: '#080b13', panel: '#0e1524', line: '#1c2436' },
+          gold:   { DEFAULT: '#c9a15a', soft: '#e3c98c' },
+          mist:   { DEFAULT: '#aab3c5', dim: '#6b7590' },
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-ink text-mist font-body antialiased">
+
+<header class="border-b border-ink-line">
+  <div class="max-w-3xl mx-auto px-6 flex items-center justify-between h-20">
+    <a href="index.html" class="font-display font-semibold text-lg text-white tracking-wide">
+      NV<span class="text-gold">.</span>
+    </a>
+    <a href="index.html#building" class="text-sm text-mist/70 hover:text-gold transition-colors">← Back to portfolio</a>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-6 py-16">
+  <p class="text-sm uppercase tracking-wider text-gold/80 mb-3">NaVault</p>
+  <h1 class="font-display text-3xl sm:text-4xl font-semibold text-white mb-2">Privacy Policy</h1>
+  <p class="text-sm text-mist/60 mb-12">Last updated: September 2026</p>
+
+  <section class="mb-10">
+    <h2 class="font-display text-xl font-semibold text-white mb-3">The short version</h2>
+    <p class="leading-relaxed">
+      NaVault does not collect, transmit, or share any of your data, with anyone, ever.
+      It has no <code class="text-gold">INTERNET</code> permission — it is not
+      technically capable of sending data anywhere, not to us, not to any third party,
+      not to an analytics or crash-reporting service. Everything you store in NaVault
+      stays on your device, encrypted, until you choose to export, back up, or share it
+      yourself.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="font-display text-xl font-semibold text-white mb-3">What NaVault stores, and where</h2>
+    <p class="leading-relaxed mb-3">
+      All vault content — passwords, bank account details, card details, documents,
+      notes, and passes — is stored <strong class="text-white">only</strong> in a local
+      encrypted database on your device (AES-256-GCM, key derived from your master
+      password via Argon2id). This data:
+    </p>
+    <ul class="list-disc list-inside space-y-1.5 leading-relaxed">
+      <li>Never leaves your device automatically.</li>
+      <li>Is never sent to any server — NaVault has none; there is no backend of any kind.</li>
+      <li>Is never shared with any third-party service, SDK, or analytics/advertising network.</li>
+      <li>Is not backed up to any cloud service by NaVault itself (Android's own system backup is explicitly disabled for this app).</li>
+    </ul>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="font-display text-xl font-semibold text-white mb-3">Local backups</h2>
+    <p class="leading-relaxed">
+      If you enable backups (Settings &gt; Backup Folder), NaVault writes an encrypted
+      copy of your vault database to a folder you choose on your device's own storage,
+      on a rolling 7-day retention schedule. This file never leaves your device unless
+      you move it yourself — NaVault takes no part in that.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="font-display text-xl font-semibold text-white mb-3">Permissions NaVault requests, and why</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-ink-line text-left text-white">
+            <th class="py-2 pr-4 font-medium">Permission</th>
+            <th class="py-2 font-medium">Why it's needed</th>
+          </tr>
+        </thead>
+        <tbody class="align-top">
+          <tr class="border-b border-ink-line/60">
+            <td class="py-3 pr-4 whitespace-nowrap">Camera</td>
+            <td class="py-3">To scan documents/ID cards directly in-app. Captured images are processed and stored locally only.</td>
+          </tr>
+          <tr class="border-b border-ink-line/60">
+            <td class="py-3 pr-4 whitespace-nowrap">Biometric / Fingerprint</td>
+            <td class="py-3">To unlock the vault with your device's fingerprint/face unlock instead of typing your master password every time. Biometric data is handled entirely by the Android OS (Keystore) — NaVault never sees or stores it.</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-4 whitespace-nowrap">Storage / manage external storage</td>
+            <td class="py-3">To let you choose a backup folder, restore from a backup file, and export or import CSV files you explicitly select. NaVault only reads/writes files you point it to.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="leading-relaxed mt-4">
+      NaVault does <strong class="text-white">not</strong> request the Internet
+      permission, location, contacts, SMS, call logs, or any other permission not
+      listed above.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="font-display text-xl font-semibold text-white mb-3">On-device features that might sound like they need a network — they don't</h2>
+    <ul class="list-disc list-inside space-y-1.5 leading-relaxed">
+      <li><strong class="text-white">Text recognition (OCR)</strong> on scanned documents uses a model bundled inside the app itself, not a cloud API. No image or text is ever uploaded anywhere.</li>
+      <li><strong class="text-white">Optional AI-assisted text import</strong> runs a small language model entirely on-device. No text you paste is sent anywhere.</li>
+      <li><strong class="text-white">Barcode/QR generation and scanning</strong> for Passes is done entirely locally.</li>
+    </ul>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="font-display text-xl font-semibold text-white mb-3">Data sharing</h2>
+    <p class="leading-relaxed mb-3">The only way data leaves NaVault is if you explicitly choose to:</p>
+    <ul class="list-disc list-inside space-y-1.5 leading-relaxed">
+      <li><strong class="text-white">Share</strong> a document/page to another app you pick (e.g. WhatsApp, Gmail) via Android's own share sheet.</li>
+      <li><strong class="text-white">Download</strong> a decrypted copy of a document to your device's Downloads folder.</li>
+      <li><strong class="text-white">Export</strong> your data as a plaintext JSON/CSV file, which you then control entirely.</li>
+    </ul>
+    <p class="leading-relaxed mt-3">None of these actions are automatic — each requires you to explicitly tap share/download/export.</p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="font-display text-xl font-semibold text-white mb-3">Children's privacy</h2>
+    <p class="leading-relaxed">
+      NaVault is not directed at children and does not knowingly collect data from
+      anyone, of any age — it does not collect data at all.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="font-display text-xl font-semibold text-white mb-3">Changes to this policy</h2>
+    <p class="leading-relaxed">
+      If this policy changes, the "Last updated" date above will change accordingly.
+      Since NaVault has no way to contact you directly (no accounts, no email
+      collection), please check this page periodically if you want to stay informed.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="font-display text-xl font-semibold text-white mb-3">Contact</h2>
+    <p class="leading-relaxed">
+      Questions about this policy or NaVault can be sent to
+      <a href="mailto:vnaveenkumar0802@gmail.com" class="text-gold hover:underline">vnaveenkumar0802@gmail.com</a>.
+    </p>
+  </section>
+</main>
+
+<footer class="border-t border-ink-line py-8 text-center text-sm text-mist/50">
+  <a href="index.html" class="hover:text-gold transition-colors">naveenkumarvaradha.github.io</a>
+</footer>
+
+</body>
+</html>
