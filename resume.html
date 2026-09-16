@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naveenkumar Varadharaj — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#080b13; --panel:#0e1524; --line:#1c2436; --gold:#c9a15a; --teal:#22d3ee;
+    --mist:#aab3c5; --mist-dim:#6b7590; --white:#f5f7fb;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--ink); color:var(--mist); font-family:Inter, sans-serif;
+    font-size:14px; line-height:1.55;
+  }
+  .page{ max-width:820px; margin:0 auto; padding:48px 40px 80px; }
+  h1{ font-family:'Space Grotesk', sans-serif; font-size:30px; font-weight:700; color:var(--white); margin:0 0 4px; }
+  .role{ font-size:16px; color:var(--gold); font-weight:600; margin-bottom:10px; }
+  .contact{ font-size:12.5px; color:var(--mist-dim); display:flex; flex-wrap:wrap; gap:4px 14px; margin-bottom:28px; }
+  .contact a{ color:var(--mist-dim); text-decoration:none; }
+  .contact a:hover{ color:var(--teal); }
+  h2{
+    font-family:'Space Grotesk', sans-serif; font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--gold); border-bottom:1px solid var(--line); padding-bottom:6px; margin:30px 0 14px;
+  }
+  h2:first-of-type{ margin-top:0; }
+  .summary{ color:var(--mist); font-size:13.5px; }
+  .skill-row{ margin-bottom:9px; font-size:13px; }
+  .skill-row b{ color:var(--white); font-weight:600; }
+  .skill-row span{ color:var(--mist); }
+  .proj{ margin-bottom:16px; }
+  .proj-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; }
+  .proj-name{ font-family:'Space Grotesk', sans-serif; font-weight:600; color:var(--white); font-size:14.5px; }
+  .proj-stack{ font-size:11.5px; color:var(--teal); font-family:monospace; }
+  .proj-desc{ font-size:12.8px; color:var(--mist); margin-top:3px; }
+  .job-head{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:2px; }
+  .job-title{ font-family:'Space Grotesk', sans-serif; font-weight:600; color:var(--white); font-size:15px; }
+  .job-date{ font-size:12px; color:var(--teal); font-family:monospace; }
+  .job-org{ font-size:12.5px; color:var(--mist-dim); margin-bottom:10px; }
+  .job-sub{ font-size:12.5px; font-weight:600; color:var(--gold); margin:12px 0 5px; }
+  ul{ margin:0 0 8px; padding-left:18px; }
+  li{ font-size:12.6px; color:var(--mist); margin-bottom:4px; }
+  .edu-row{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  .edu-name{ color:var(--white); font-weight:600; font-size:14px; }
+  .edu-sub{ font-size:12.5px; color:var(--mist-dim); }
+  .print-btn{
+    position:fixed; top:20px; right:20px; background:var(--gold); color:var(--ink); border:none;
+    padding:10px 18px; border-radius:999px; font-weight:600; font-size:13px; cursor:pointer; font-family:Inter, sans-serif;
+  }
+  @media print{
+    .print-btn{ display:none; }
+    body{ background:#fff; color:#1a1a1a; font-size:11.5px; }
+    .page{ padding:0; max-width:100%; }
+    h1{ color:#0b0e14; }
+    .role{ color:#8a6a2f; }
+    .contact, .contact a{ color:#444; }
+    h2{ color:#8a6a2f; border-color:#ccc; }
+    .summary, .skill-row span, li, .proj-desc, .job-org{ color:#222; }
+    .skill-row b, .proj-name, .job-title, .edu-name{ color:#0b0e14; }
+    .proj-stack, .job-date{ color:#555; }
+    .job-sub{ color:#8a6a2f; }
+    a{ color:#222 !important; text-decoration:none; }
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+
+<div class="page">
+  <h1>Naveenkumar Varadharaj</h1>
+  <p class="role">Full-Stack Developer</p>
+  <p class="contact">
+    <span>Coimbatore, Tamil Nadu, India</span>
+    <a href="tel:+919943584370">+91 99435 84370</a>
+    <a href="mailto:vnaveenkumar0802@gmail.com">vnaveenkumar0802@gmail.com</a>
+    <a href="https://naveenkumarvaradha.github.io/" target="_blank" rel="noopener">naveenkumarvaradha.github.io</a>
+    <a href="https://github.com/naveenkumarvaradha" target="_blank" rel="noopener">github.com/naveenkumarvaradha</a>
+    <a href="https://www.linkedin.com/in/naveenkumarvaradharaj/" target="_blank" rel="noopener">linkedin.com/in/naveenkumarvaradharaj</a>
+  </p>
+
+  <h2>Summary</h2>
+  <p class="summary">
+    Full-stack developer who builds production-grade systems end to end &mdash; Java/Spring Boot APIs,
+    React/TypeScript frontends, and a hybrid Rust + Android security engine &mdash; alongside 3+ years of
+    professional experience automating enterprise ERP workflows (procurement, inventory, EDI, WMS) for a
+    textile manufacturer, cutting manual processing time and eliminating reconciliation errors at scale.
+  </p>
+
+  <h2>Technical Skills</h2>
+  <div class="skill-row"><b>Languages:</b> <span>Java, TypeScript, JavaScript, SQL, Rust</span></div>
+  <div class="skill-row"><b>Backend &amp; APIs:</b> <span>Spring Boot, Spring Security, JWT, Hibernate/JPA, Apache Kafka, REST/OpenAPI</span></div>
+  <div class="skill-row"><b>Frontend:</b> <span>React, Redux Toolkit, React Router, React Hook Form, MUI, Tailwind CSS</span></div>
+  <div class="skill-row"><b>Android &amp; Mobile:</b> <span>Android SDK, Jetpack, CameraX, ML Kit, JNI, Biometric/Keystore APIs</span></div>
+  <div class="skill-row"><b>Databases &amp; Infra:</b> <span>PostgreSQL, Redis, SQLite/SQLCipher, MySQL, Docker, GitHub Actions CI</span></div>
+  <div class="skill-row"><b>Security &amp; Cryptography:</b> <span>AES-256-GCM, Argon2id, PKCS#12/CMS digital signatures, BouncyCastle</span></div>
+  <div class="skill-row"><b>Enterprise / ERP (3+ yrs):</b> <span>Datatex ERP, WFX, EDI, WMS, SQL Server, SSRS</span></div>
+
+  <h2>Projects</h2>
+
+  <div class="proj">
+    <div class="proj-head">
+      <span class="proj-name">NaVault — offline Android password &amp; document vault</span>
+      <span class="proj-stack">Rust · Java · Android · AES-256-GCM · Argon2id</span>
+    </div>
+    <p class="proj-desc">Fully offline password/bank-account/card/document vault for Android. Hybrid Rust encryption engine (AES-256-GCM + Argon2id) with a native Java/Android UI, biometric unlock via Android Keystore/StrongBox, zero network permissions. Published to Google Play closed testing.</p>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head">
+      <span class="proj-name">CourierApp (ShipDesk) — courier booking &amp; tracking system</span>
+      <span class="proj-stack">Java · Spring Boot · React · TypeScript · PostgreSQL · Redis · Kafka</span>
+    </div>
+    <p class="proj-desc">Internal courier booking and tracking system for a textile manufacturer. JWT auth, multi-level approval workflows, PDF/Excel exports, barcode shipping labels, Redis-cached lookups, Kafka messaging, Swagger/OpenAPI docs.</p>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head">
+      <span class="proj-name">PDFEditor — full-stack, Acrobat-level PDF editor</span>
+      <span class="proj-stack">Java · Spring Boot · PDFBox · BouncyCastle · React · TypeScript</span>
+    </div>
+    <p class="proj-desc">True in-place text editing, annotations, AcroForm handling, PKCS#12 digital signatures with CMS/PKCS#7 verification, standard PDF encryption/redaction, and Tesseract OCR.</p>
+  </div>
+
+  <h2>Professional Experience</h2>
+  <div class="job-head">
+    <span class="job-title">ERP Support Executive</span>
+    <span class="job-date">Nov 2022 — Present</span>
+  </div>
+  <p class="job-org">CTL India Pvt. Ltd. (formerly Aquarelle India Pvt. Ltd.) — TROPIC, Coimbatore</p>
+
+  <p class="job-sub">WFX (World Fashion Exchange) ERP</p>
+  <ul>
+    <li>Automated buyer PO extraction from portal and email feeds into WFX, eliminating manual keying for 500+ purchase orders per month and cutting average processing time by ~70%.</li>
+    <li>Configured EDI order creation workflows for automated buyer&ndash;supplier order exchange, reducing order processing errors to near zero.</li>
+    <li>Implemented WMS integration within WFX for real-time inventory tracking, goods receipt, and dispatch visibility across multiple warehouses.</li>
+    <li>Integrated WFX with third-party platforms for order management, inventory sync, and supplier communications, reducing reconciliation effort.</li>
+    <li>Delivered end-user training and post-go-live support for 30+ users across procurement, warehouse, and vendor collaboration functions.</li>
+  </ul>
+
+  <p class="job-sub">Datatex ERP</p>
+  <ul>
+    <li>Led implementation of 6 core Datatex modules — procurement, inventory, sales, logistics, fixed assets, production planning — for a large-scale textile manufacturer.</li>
+    <li>Designed requisition approval workflows and catalog integrations, reducing off-system workarounds.</li>
+    <li>Migrated 300+ supplier master records with zero data integrity failures at go-live.</li>
+    <li>Configured MQM (Machine Queue Management) for MES tracking, improving shop-floor reporting accuracy.</li>
+    <li>Facilitated UAT across 3 functional departments, resolving 40+ defects pre-go-live for a clean production cutover.</li>
+  </ul>
+
+  <p class="job-sub">Opta-Cut &amp; Opta-Floor</p>
+  <ul>
+    <li>Configured Opta-Cut cutting-room management (cut plans, marker efficiency, fabric consumption), reducing fabric waste.</li>
+    <li>Configured Opta-Floor real-time shop-floor control (workstation output tracking, efficiency monitoring).</li>
+    <li>Integrated both systems with core ERP so production actuals flowed into planning/inventory with no manual reconciliation.</li>
+  </ul>
+
+  <h2>Education</h2>
+  <div class="edu-row">
+    <span class="edu-name">Bachelor of Computer Applications (BCA)</span>
+    <span class="job-date">Jul 2019 — Jun 2022</span>
+  </div>
+  <p class="edu-sub">Sri Ganesh College of Arts &amp; Science, Salem — Periyar University · CGPA 8.1 / 10</p>
+</div>
+
+</body>
+</html>
