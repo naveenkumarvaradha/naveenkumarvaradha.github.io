@@ -30,8 +30,8 @@ body {
 #pillNav { position: relative; }
 .nav-pill-glow {
   position: absolute; top: 6px; bottom: 6px; left: 6px; width: 0;
-  background: #0a2a6b; border-radius: 999px; z-index: 0;
-  transition: transform .35s cubic-bezier(.4,0,.2,1), width .35s cubic-bezier(.4,0,.2,1), opacity .2s ease;
+  background: #ff8400; border-radius: 999px; z-index: 0;
+  transition: transform .35s cubic-bezier(.4,0,.2,1), width .35s cubic-bezier(.4,0,.2,1), opacity .2s ease, background .25s ease;
   opacity: 0;
 }
 .pill-link {
@@ -41,7 +41,7 @@ body {
   transition: color .25s ease;
 }
 .pill-link:hover { color: #ff8400; }
-.pill-link.active { color: #f5efe6; }
+.pill-link.active { color: #fff; }
 
 .mobile-link { color: #2d2a24; padding: .75rem 0; border-bottom: 1px solid var(--cream-line); font-size: .95rem; font-weight: 600; }
 .mobile-link:last-child { border-bottom: none; }

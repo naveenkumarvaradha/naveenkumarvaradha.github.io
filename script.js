@@ -1,5 +1,13 @@
 gsap.registerPlugin(ScrollTrigger);
 
+/* re-measure section positions once web fonts finish swapping in, since
+   that shifts layout and would otherwise leave ScrollTrigger with stale
+   trigger points (wrong active nav link, wrong dark-section boundaries) */
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(() => ScrollTrigger.refresh());
+}
+window.addEventListener('load', () => ScrollTrigger.refresh());
+
 document.getElementById('year').textContent = new Date().getFullYear();
 
 /* ---------- nav scroll state ---------- */
