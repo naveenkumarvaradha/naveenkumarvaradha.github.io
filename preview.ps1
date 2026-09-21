@@ -53,23 +53,29 @@ try {
       $ctx = $listener.GetContext()
       $req = $ctx.Request
       $res = $ctx.Response
-      $path = $req.Url.LocalPath
-      if ($path -eq '/') { $path = '/index.html' }
-      $file = Join-Path $root ($path.TrimStart('/'))
-      if (Test-Path $file -PathType Leaf) {
-        $ext = [System.IO.Path]::GetExtension($file)
-        $ct = $mime[$ext]
-        if (-not $ct) { $ct = 'application/octet-stream' }
-        $bytes = [System.IO.File]::ReadAllBytes($file)
-        $res.ContentType = $ct
-        $res.ContentLength64 = $bytes.Length
-        $res.OutputStream.Write($bytes, 0, $bytes.Length)
-      } else {
-        $res.StatusCode = 404
-        $bytes = [System.Text.Encoding]::UTF8.GetBytes("404 not found: $path")
-        $res.OutputStream.Write($bytes, 0, $bytes.Length)
+      try {
+        $path = $req.Url.LocalPath
+        if ($path -eq '/') { $path = '/index.html' }
+        $file = Join-Path $root ($path.TrimStart('/'))
+        if (Test-Path $file -PathType Leaf) {
+          $ext = [System.IO.Path]::GetExtension($file)
+          $ct = $mime[$ext]
+          if (-not $ct) { $ct = 'application/octet-stream' }
+          $bytes = [System.IO.File]::ReadAllBytes($file)
+          $res.ContentType = $ct
+          $res.ContentLength64 = $bytes.LongLength
+          $res.OutputStream.Write($bytes, 0, $bytes.Length)
+        } else {
+          $res.StatusCode = 404
+          $bytes = [System.Text.Encoding]::UTF8.GetBytes("404 not found: $path")
+          $res.ContentLength64 = $bytes.LongLength
+          $res.OutputStream.Write($bytes, 0, $bytes.Length)
+        }
+      } catch {
+        Write-Host "request error: $($_.Exception.Message)" -ForegroundColor DarkGray
+      } finally {
+        $res.OutputStream.Close()
       }
-      $res.OutputStream.Close()
     }
 } finally {
     $listener.Stop()

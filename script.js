@@ -26,8 +26,20 @@ document.querySelectorAll('#mobileMenu a').forEach(a => {
   });
 });
 
-/* ---------- active nav link on scroll ---------- */
+/* ---------- active nav link + sliding pill ---------- */
 const navLinks = document.querySelectorAll('[data-nav]');
+const pillNav = document.getElementById('pillNav');
+const navGlow = document.getElementById('navPillGlow');
+
+function moveGlowTo(link) {
+  if (!link || !pillNav || !navGlow) return;
+  const navRect = pillNav.getBoundingClientRect();
+  const linkRect = link.getBoundingClientRect();
+  navGlow.style.opacity = '1';
+  navGlow.style.width = linkRect.width + 'px';
+  navGlow.style.transform = `translateX(${linkRect.left - navRect.left}px)`;
+}
+
 document.querySelectorAll('section[id]').forEach((section) => {
   ScrollTrigger.create({
     trigger: section,
@@ -36,10 +48,17 @@ document.querySelectorAll('section[id]').forEach((section) => {
     onToggle: (self) => {
       if (!self.isActive) return;
       navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${section.id}`);
+        const isActive = link.getAttribute('href') === `#${section.id}`;
+        link.classList.toggle('active', isActive);
+        if (isActive && link.classList.contains('pill-link')) moveGlowTo(link);
       });
     }
   });
+});
+
+window.addEventListener('resize', () => {
+  const active = document.querySelector('.pill-link.active');
+  if (active) moveGlowTo(active);
 });
 
 /* ---------- hero entrance ---------- */
@@ -51,36 +70,6 @@ gsap.to('.hero-reveal', {
   ease: 'power3.out',
   delay: 0.2,
 });
-
-/* ---------- hero shape parallax (mouse) ---------- */
-const heroField = document.querySelector('.hero-field');
-const shapes = gsap.utils.toArray('.hero-shape');
-if (window.matchMedia('(min-width: 768px)').matches && heroField) {
-  heroField.addEventListener('mousemove', (e) => {
-    const { innerWidth, innerHeight } = window;
-    const x = (e.clientX / innerWidth - 0.5);
-    const y = (e.clientY / innerHeight - 0.5);
-    shapes.forEach((shape, i) => {
-      const depth = (i + 1) * 18;
-      gsap.to(shape, { x: x * depth, y: y * depth, duration: 1.2, ease: 'power2.out' });
-    });
-  });
-}
-
-/* ---------- cursor glow ---------- */
-const glow = document.getElementById('cursorGlow');
-if (window.matchMedia('(min-width: 768px)').matches && glow) {
-  window.addEventListener('mousemove', (e) => {
-    glow.classList.add('active');
-    gsap.to(glow, { x: e.clientX, y: e.clientY, duration: 0.5, ease: 'power2.out' });
-  });
-  window.addEventListener('mouseleave', () => glow.classList.remove('active'));
-}
-
-/* ---------- hero shapes slow drift on scroll ---------- */
-gsap.to('.shape-a', { y: 120, scrollTrigger: { trigger: '#home', start: 'top top', end: 'bottom top', scrub: 1 } });
-gsap.to('.shape-b', { y: -80, scrollTrigger: { trigger: '#home', start: 'top top', end: 'bottom top', scrub: 1 } });
-gsap.to('.shape-c', { y: 60, scrollTrigger: { trigger: '#home', start: 'top top', end: 'bottom top', scrub: 1 } });
 
 /* ---------- generic reveal-up for every section ---------- */
 gsap.utils.toArray('.reveal-up').forEach((el) => {
@@ -132,3 +121,46 @@ gsap.utils.toArray('.stat-num').forEach((el) => {
     },
   });
 });
+
+/* ---------- text scramble on scroll into view ---------- */
+const SCRAMBLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+function scrambleInto(el, finalText, duration = 600) {
+  const start = performance.now();
+  function frame(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const revealCount = Math.floor(progress * finalText.length);
+    let out = '';
+    for (let i = 0; i < finalText.length; i++) {
+      if (i < revealCount) out += finalText[i];
+      else if (finalText[i] === ' ') out += ' ';
+      else out += SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+    }
+    el.textContent = out;
+    if (progress < 1) requestAnimationFrame(frame);
+    else el.textContent = finalText;
+  }
+  requestAnimationFrame(frame);
+}
+document.querySelectorAll('[data-scramble]').forEach((el) => {
+  const finalText = el.dataset.scramble;
+  ScrollTrigger.create({
+    trigger: el,
+    start: 'top 90%',
+    once: true,
+    onEnter: () => scrambleInto(el, finalText),
+  });
+});
+
+/* ---------- hero illustration gentle mouse parallax ---------- */
+const illusPanel = document.querySelector('.illus-panel');
+if (window.matchMedia('(min-width: 768px)').matches && illusPanel) {
+  illusPanel.addEventListener('mousemove', (e) => {
+    const rect = illusPanel.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    gsap.to(illusPanel, { rotateY: x * 4, rotateX: -y * 4, duration: 0.6, ease: 'power2.out', transformPerspective: 800 });
+  });
+  illusPanel.addEventListener('mouseleave', () => {
+    gsap.to(illusPanel, { rotateY: 0, rotateX: 0, duration: 0.6, ease: 'power2.out' });
+  });
+}
