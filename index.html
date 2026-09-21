@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800;900&family=VT323&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -16,15 +16,15 @@
     theme: {
       extend: {
         colors: {
-          cream:  { DEFAULT: '#f6ecd9', panel: '#eeddc0', line: '#e2cfa8' },
-          navy:   { DEFAULT: '#0d2247', deep: '#081832', line: '#1f3a63' },
-          orange: { DEFAULT: '#f2790f', soft: '#ffb066' },
-          ink:    { DEFAULT: '#20180c', mist: '#7a6f5c' },
+          cream:  { DEFAULT: '#f5efe6', panel: '#f1e5d5', line: '#e9ded0' },
+          navy:   { DEFAULT: '#0a2a6b', deep: '#04123f', line: '#1c3f8c' },
+          orange: { DEFAULT: '#ff8400', soft: '#ffb066' },
+          ink:    { DEFAULT: '#2d2a24', mist: '#5f5646' },
         },
         fontFamily: {
-          display: ['Sora', 'sans-serif'],
-          body: ['Inter', 'sans-serif'],
-          mono: ['"JetBrains Mono"', 'monospace'],
+          display: ['Urbanist', 'sans-serif'],
+          body: ['Urbanist', 'sans-serif'],
+          mono: ['VT323', 'monospace'],
         },
       }
     }
@@ -40,7 +40,7 @@
 <!-- ============ NAV ============ -->
 <header id="siteNav" class="fixed top-0 inset-x-0 z-50">
   <div class="max-w-6xl mx-auto px-5 sm:px-6 flex items-center justify-between h-20 gap-4">
-    <a href="#home" class="font-display font-bold text-lg tracking-wide shrink-0">
+    <a href="#home" class="site-logo font-display font-bold text-lg tracking-wide shrink-0 transition-colors">
       NV<span class="text-orange">.</span>
     </a>
 
@@ -76,14 +76,14 @@
 <section id="home" class="relative overflow-hidden pt-32 pb-16 sm:pt-40">
   <div class="max-w-6xl mx-auto px-5 sm:px-6 grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
     <div>
-      <p class="hero-reveal inline-flex items-center gap-2 font-mono text-xs tracking-[0.2em] uppercase bg-cream-panel border border-cream-line rounded-full px-4 py-2 mb-7">
-        <span class="dot-live"></span> Coimbatore, India · Open to opportunities
-      </p>
-      <h1 class="hero-reveal font-display font-extrabold leading-[0.98] text-5xl sm:text-6xl lg:text-[4.5rem] mb-5">
-        Naveenkumar<br><span class="text-stroke">Varadharaj</span>
+      <h1 class="hero-reveal font-display font-black leading-[1.02] tracking-tight text-5xl sm:text-6xl lg:text-[3.75rem] mb-5">
+        Naveenkumar<br>Varadharaj
       </h1>
-      <p class="hero-reveal inline-block font-display font-bold text-sm sm:text-base bg-navy text-cream rounded-lg px-3 py-1.5 mb-6 -rotate-1">
+      <p class="hero-reveal inline-block font-display font-extrabold text-sm sm:text-base bg-navy text-cream rounded-lg px-3 py-1.5 mb-6 tracking-wide">
         ERP FUNCTIONAL CONSULTANT
+      </p>
+      <p class="hero-reveal inline-flex items-center gap-2 font-body text-xs tracking-[0.15em] uppercase text-ink/50 mb-7">
+        <span class="dot-live"></span> Coimbatore, India · Open to opportunities
       </p>
       <p class="hero-reveal max-w-lg text-base leading-relaxed text-ink/70 mb-9">
         I turn tangled procurement, inventory and shop-floor processes into configured,
@@ -105,7 +105,7 @@
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6.5h18v11H3z"/><path d="M3 7l9 6 9-6"/></svg>
         </a>
         <span class="w-px h-5 bg-cream-line"></span>
-        <a href="tel:+919943584370" class="font-mono text-sm text-ink/60 hover:text-orange transition-colors">+91 99435 84370</a>
+        <a href="tel:+919943584370" class="font-body font-semibold text-sm text-ink/60 hover:text-orange transition-colors">+91 99435 84370</a>
       </div>
     </div>
 
@@ -114,54 +114,54 @@
         <svg viewBox="0 0 460 420" class="w-full h-auto" role="img" aria-label="Illustration of a workstation with dual monitors">
           <defs>
             <linearGradient id="deskGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#f7edd9"/>
-              <stop offset="1" stop-color="#eaddc2"/>
+              <stop offset="0" stop-color="#f8f0e2"/>
+              <stop offset="1" stop-color="#f1e5d5"/>
             </linearGradient>
           </defs>
-          <ellipse cx="230" cy="392" rx="190" ry="16" fill="#0d2247" opacity=".08"/>
-          <rect x="30" y="300" width="400" height="26" rx="8" fill="url(#deskGrad)" stroke="#e2cfa8" stroke-width="2"/>
-          <rect x="60" y="326" width="16" height="46" fill="#eaddc2"/>
-          <rect x="384" y="326" width="16" height="46" fill="#eaddc2"/>
+          <ellipse cx="230" cy="392" rx="190" ry="16" fill="#0a2a6b" opacity=".08"/>
+          <rect x="30" y="300" width="400" height="26" rx="8" fill="url(#deskGrad)" stroke="#e9ded0" stroke-width="2"/>
+          <rect x="60" y="326" width="16" height="46" fill="#f1e5d5"/>
+          <rect x="384" y="326" width="16" height="46" fill="#f1e5d5"/>
           <g>
-            <rect x="70" y="130" width="150" height="104" rx="10" fill="#0d2247"/>
-            <rect x="80" y="140" width="130" height="84" rx="4" fill="#0a1a36"/>
-            <rect x="90" y="150" width="70" height="6" rx="3" fill="#f2790f"/>
-            <rect x="90" y="164" width="94" height="5" rx="2.5" fill="#3a5a8c"/>
-            <rect x="90" y="176" width="60" height="5" rx="2.5" fill="#3a5a8c"/>
+            <rect x="70" y="130" width="150" height="104" rx="10" fill="#0a2a6b"/>
+            <rect x="80" y="140" width="130" height="84" rx="4" fill="#04123f"/>
+            <rect x="90" y="150" width="70" height="6" rx="3" fill="#ff8400"/>
+            <rect x="90" y="164" width="94" height="5" rx="2.5" fill="#3f5fa8"/>
+            <rect x="90" y="176" width="60" height="5" rx="2.5" fill="#3f5fa8"/>
             <rect x="90" y="188" width="82" height="5" rx="2.5" fill="#ffb066"/>
-            <rect x="90" y="200" width="50" height="5" rx="2.5" fill="#3a5a8c"/>
-            <rect x="140" y="234" width="10" height="18" fill="#0d2247"/>
-            <rect x="118" y="250" width="54" height="8" rx="4" fill="#0d2247"/>
+            <rect x="90" y="200" width="50" height="5" rx="2.5" fill="#3f5fa8"/>
+            <rect x="140" y="234" width="10" height="18" fill="#0a2a6b"/>
+            <rect x="118" y="250" width="54" height="8" rx="4" fill="#0a2a6b"/>
           </g>
           <g>
-            <rect x="240" y="104" width="168" height="118" rx="10" fill="#0d2247"/>
-            <rect x="251" y="115" width="146" height="96" rx="4" fill="#0a1a36"/>
-            <circle cx="324" cy="163" r="34" fill="none" stroke="#f2790f" stroke-width="4" stroke-dasharray="8 7"/>
+            <rect x="240" y="104" width="168" height="118" rx="10" fill="#0a2a6b"/>
+            <rect x="251" y="115" width="146" height="96" rx="4" fill="#04123f"/>
+            <circle cx="324" cy="163" r="34" fill="none" stroke="#ff8400" stroke-width="4" stroke-dasharray="8 7"/>
             <circle cx="324" cy="163" r="16" fill="#ffb066" opacity=".85"/>
-            <rect x="261" y="188" width="60" height="5" rx="2.5" fill="#3a5a8c"/>
-            <rect x="261" y="198" width="90" height="5" rx="2.5" fill="#3a5a8c"/>
-            <rect x="319" y="228" width="10" height="20" fill="#0d2247"/>
-            <rect x="296" y="248" width="56" height="8" rx="4" fill="#0d2247"/>
+            <rect x="261" y="188" width="60" height="5" rx="2.5" fill="#3f5fa8"/>
+            <rect x="261" y="198" width="90" height="5" rx="2.5" fill="#3f5fa8"/>
+            <rect x="319" y="228" width="10" height="20" fill="#0a2a6b"/>
+            <rect x="296" y="248" width="56" height="8" rx="4" fill="#0a2a6b"/>
           </g>
           <g>
-            <rect x="96" y="252" width="30" height="34" rx="4" fill="#f2790f"/>
+            <rect x="96" y="252" width="30" height="34" rx="4" fill="#ff8400"/>
             <rect x="96" y="252" width="30" height="8" rx="4" fill="#c9600a"/>
           </g>
           <g>
-            <rect x="360" y="256" width="20" height="26" rx="3" fill="#eaddc2" stroke="#0d2247" stroke-width="2"/>
-            <path d="M363 256c0-8 14-8 14 0" fill="none" stroke="#0d2247" stroke-width="2"/>
+            <rect x="360" y="256" width="20" height="26" rx="3" fill="#f1e5d5" stroke="#0a2a6b" stroke-width="2"/>
+            <path d="M363 256c0-8 14-8 14 0" fill="none" stroke="#0a2a6b" stroke-width="2"/>
           </g>
           <g>
-            <ellipse cx="230" cy="340" rx="26" ry="8" fill="#c9a15a" opacity=".25"/>
+            <ellipse cx="230" cy="340" rx="26" ry="8" fill="#ff8400" opacity=".25"/>
             <rect x="216" y="300" width="28" height="34" rx="5" fill="#3f7d52"/>
             <path d="M230 300c-10-14 4-26 14-30-4 14-4 24-14 30z" fill="#4f9863"/>
             <path d="M230 300c8-16-2-28-12-33 2 15 4 25 12 33z" fill="#3f7d52"/>
           </g>
           <g class="drift-shape">
-            <circle cx="60" cy="90" r="5" fill="#f2790f"/>
-            <circle cx="410" cy="60" r="4" fill="#0d2247" opacity=".4"/>
-            <circle cx="420" cy="270" r="6" fill="#f2790f" opacity=".6"/>
-            <path d="M40 200 l8 8 -8 8 -8-8z" fill="#0d2247" opacity=".3"/>
+            <circle cx="60" cy="90" r="5" fill="#ff8400"/>
+            <circle cx="410" cy="60" r="4" fill="#0a2a6b" opacity=".4"/>
+            <circle cx="420" cy="270" r="6" fill="#ff8400" opacity=".6"/>
+            <path d="M40 200 l8 8 -8 8 -8-8z" fill="#0a2a6b" opacity=".3"/>
           </g>
         </svg>
       </div>
@@ -174,49 +174,51 @@
 </section>
 
 <!-- ============ ABOUT ============ -->
-<section id="about" class="section-pad">
-  <div class="max-w-6xl mx-auto px-5 sm:px-6">
-    <div class="about-panel reveal-up">
-      <div class="about-grid">
-        <div class="about-panel-copy">
-          <p class="eyebrow eyebrow--light">01 · Profile</p>
-          <p class="mt-5 text-2xl sm:text-3xl font-display font-semibold text-cream leading-snug">
-            ERP Techno-Functional Consultant with 3+ years delivering end-to-end module
-            rollouts across procurement, inventory, WMS, EDI, MES and production planning
-            for the apparel &amp; textile industry.
-          </p>
-          <p class="mt-5 text-sm text-cream/60 leading-relaxed max-w-md">
-            Bridging business requirements and system configuration &mdash; from UAT
-            to a stable go-live &mdash; on Datatex and WFX ERP platforms.
-          </p>
-        </div>
-        <div class="about-panel-art">
-          <div class="scan-stage">
-            <div class="scan-grid" aria-hidden="true"></div>
-            <div class="scan-ring scan-ring--1" aria-hidden="true"></div>
-            <div class="scan-ring scan-ring--2" aria-hidden="true"></div>
-            <svg viewBox="0 0 160 220" class="scan-figure" aria-hidden="true">
-              <ellipse cx="80" cy="206" rx="46" ry="10" fill="#f2790f" opacity=".18"/>
-              <circle cx="80" cy="48" r="30" fill="none" stroke="#ffb066" stroke-width="2"/>
-              <rect x="46" y="86" width="68" height="94" rx="18" fill="none" stroke="#ffb066" stroke-width="2"/>
-              <line x1="46" y1="110" x2="18" y2="110" stroke="#ffb066" stroke-width="1.5" stroke-dasharray="3 4"/>
-              <line x1="114" y1="110" x2="142" y2="110" stroke="#ffb066" stroke-width="1.5" stroke-dasharray="3 4"/>
-              <line x1="80" y1="180" x2="80" y2="204" stroke="#ffb066" stroke-width="1.5" stroke-dasharray="3 4"/>
-            </svg>
-            <div class="scan-card scan-card--a">
-              <p class="font-display font-semibold text-sm text-white">Naveenkumar</p>
-              <p class="font-mono text-[11px] text-cream/50 mt-0.5">Coimbatore, India</p>
-            </div>
-            <div class="scan-card scan-card--b">
-              <p class="font-mono text-[11px] text-cream/70 leading-relaxed">Configures ERP<br>workflows that hold<br>up at go-live.</p>
-            </div>
-            <div class="scan-badge">3+ YRS</div>
+<section id="about" class="about-section" data-dark-nav>
+  <div class="max-w-6xl mx-auto px-5 sm:px-6 py-20">
+    <div class="about-grid reveal-up">
+      <div class="about-panel-copy">
+        <p class="eyebrow eyebrow--light">01 · Profile</p>
+        <p class="mt-5 text-2xl sm:text-3xl font-display font-semibold text-cream leading-snug">
+          ERP Techno-Functional Consultant with 3+ years delivering end-to-end module
+          rollouts across procurement, inventory, WMS, EDI, MES and production planning
+          for the apparel &amp; textile industry.
+        </p>
+        <p class="mt-5 text-sm text-cream/60 leading-relaxed max-w-md">
+          Bridging business requirements and system configuration &mdash; from UAT
+          to a stable go-live &mdash; on Datatex and WFX ERP platforms.
+        </p>
+      </div>
+      <div class="about-panel-art">
+        <div class="scan-stage">
+          <div class="scan-grid" aria-hidden="true"></div>
+          <div class="scan-ring scan-ring--1" aria-hidden="true"></div>
+          <div class="scan-ring scan-ring--2" aria-hidden="true"></div>
+          <svg viewBox="0 0 160 220" class="scan-figure" aria-hidden="true">
+            <ellipse cx="80" cy="206" rx="46" ry="10" fill="#ff8400" opacity=".18"/>
+            <circle cx="80" cy="48" r="30" fill="none" stroke="#ffb066" stroke-width="2"/>
+            <rect x="46" y="86" width="68" height="94" rx="18" fill="none" stroke="#ffb066" stroke-width="2"/>
+            <line x1="46" y1="110" x2="18" y2="110" stroke="#ffb066" stroke-width="1.5" stroke-dasharray="3 4"/>
+            <line x1="114" y1="110" x2="142" y2="110" stroke="#ffb066" stroke-width="1.5" stroke-dasharray="3 4"/>
+            <line x1="80" y1="180" x2="80" y2="204" stroke="#ffb066" stroke-width="1.5" stroke-dasharray="3 4"/>
+          </svg>
+          <div class="scan-card scan-card--a">
+            <p class="font-display font-semibold text-sm text-white">Naveenkumar</p>
+            <p class="font-mono text-sm text-cream/50 mt-0.5">Coimbatore, India</p>
           </div>
+          <div class="scan-card scan-card--b">
+            <p class="font-mono text-base text-cream/70 leading-relaxed">Configures ERP<br>workflows that hold<br>up at go-live.</p>
+          </div>
+          <div class="scan-badge">3+ YRS</div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="reveal-up grid grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
+<section class="section-pad !pt-14">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6">
+    <div class="reveal-up grid grid-cols-2 lg:grid-cols-4 gap-5">
       <div class="stat-card">
         <p class="stat-num" data-count="3" data-suffix="+">0</p>
         <p class="stat-label">Years in ERP support &amp; implementation</p>
@@ -242,8 +244,8 @@
   <div class="max-w-6xl mx-auto px-5 sm:px-6">
     <p class="eyebrow reveal-up">02 · Experience</p>
     <div class="reveal-up flex flex-wrap items-baseline justify-between gap-3 mt-5 mb-1">
-      <h2 class="font-display text-3xl sm:text-4xl font-extrabold">ERP Support Executive</h2>
-      <span class="font-mono text-sm text-orange font-medium">Nov 2022 — Present</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-black">ERP Support Executive</h2>
+      <span class="font-body text-sm text-orange font-bold">Nov 2022 — Present</span>
     </div>
     <p class="reveal-up text-sm text-ink/50 mb-14">CTL India Pvt. Ltd. <span class="text-ink/30">(formerly Aquarelle India Pvt. Ltd.)</span> — TROPIC, Coimbatore</p>
 
@@ -289,7 +291,7 @@
 <section id="skills" class="section-pad">
   <div class="max-w-6xl mx-auto px-5 sm:px-6">
     <p class="eyebrow reveal-up">03 · Skills</p>
-    <h2 class="reveal-up font-display text-3xl sm:text-4xl font-extrabold mt-5 mb-14">Key skills &amp; technical expertise</h2>
+    <h2 class="reveal-up font-display text-3xl sm:text-4xl font-black mt-5 mb-14">Key skills &amp; technical expertise</h2>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="skill-card reveal-up">
@@ -353,23 +355,23 @@
 <section id="projects" class="section-pad">
   <div class="max-w-6xl mx-auto px-5 sm:px-6">
     <p class="tag-eyebrow reveal-up"><span data-scramble="SELECTED">SELECTED</span></p>
-    <h2 class="reveal-up font-display text-4xl sm:text-5xl font-extrabold mt-4 mb-14">Projects</h2>
+    <h2 class="reveal-up font-display text-4xl sm:text-5xl font-black mt-4 mb-14">Projects</h2>
 
     <div class="grid sm:grid-cols-2 gap-7">
 
       <article class="project-card reveal-up">
         <div class="project-thumb">
           <svg viewBox="0 0 200 130" class="w-full h-full">
-            <rect width="200" height="130" fill="#0d2247"/>
-            <g opacity=".5" stroke="#3a5a8c" stroke-width="1">
+            <rect width="200" height="130" fill="#0a2a6b"/>
+            <g opacity=".5" stroke="#3f5fa8" stroke-width="1">
               <path d="M0 30h200M0 65h200M0 100h200M40 0v130M100 0v130M160 0v130"/>
             </g>
-            <rect x="24" y="40" width="34" height="50" rx="4" fill="#1f3a63"/>
-            <rect x="24" y="40" width="34" height="8" fill="#f2790f"/>
+            <rect x="24" y="40" width="34" height="50" rx="4" fill="#1c3f8c"/>
+            <rect x="24" y="40" width="34" height="8" fill="#ff8400"/>
             <circle cx="100" cy="60" r="22" fill="none" stroke="#ffb066" stroke-width="3"/>
             <circle cx="100" cy="60" r="8" fill="#ffb066"/>
-            <rect x="142" y="45" width="34" height="34" rx="6" fill="#1f3a63"/>
-            <path d="M100 82v20M76 65H58M124 65h18" stroke="#f2790f" stroke-width="2"/>
+            <rect x="142" y="45" width="34" height="34" rx="6" fill="#1c3f8c"/>
+            <path d="M100 82v20M76 65H58M124 65h18" stroke="#ff8400" stroke-width="2"/>
           </svg>
         </div>
         <h3 class="project-title">ERP &amp; PLM Implementation</h3>
@@ -384,16 +386,16 @@
       <article class="project-card reveal-up">
         <div class="project-thumb">
           <svg viewBox="0 0 200 130" class="w-full h-full">
-            <rect width="200" height="130" fill="#0d2247"/>
-            <g opacity=".5" stroke="#3a5a8c" stroke-width="1">
+            <rect width="200" height="130" fill="#0a2a6b"/>
+            <g opacity=".5" stroke="#3f5fa8" stroke-width="1">
               <path d="M0 30h200M0 65h200M0 100h200M40 0v130M100 0v130M160 0v130"/>
             </g>
-            <rect x="30" y="48" width="40" height="30" rx="5" fill="#1f3a63"/>
-            <path d="M70 63h60" stroke="#f2790f" stroke-width="3" stroke-dasharray="6 5"/>
-            <rect x="130" y="48" width="40" height="30" rx="5" fill="#1f3a63"/>
+            <rect x="30" y="48" width="40" height="30" rx="5" fill="#1c3f8c"/>
+            <path d="M70 63h60" stroke="#ff8400" stroke-width="3" stroke-dasharray="6 5"/>
+            <rect x="130" y="48" width="40" height="30" rx="5" fill="#1c3f8c"/>
             <path d="M50 78v14M150 78v14" stroke="#ffb066" stroke-width="2"/>
             <circle cx="50" cy="98" r="5" fill="#ffb066"/>
-            <circle cx="150" cy="98" r="5" fill="#f2790f"/>
+            <circle cx="150" cy="98" r="5" fill="#ff8400"/>
           </svg>
         </div>
         <h3 class="project-title">Buyer PO &amp; EDI Automation</h3>
@@ -408,16 +410,16 @@
       <article class="project-card reveal-up">
         <div class="project-thumb">
           <svg viewBox="0 0 200 130" class="w-full h-full">
-            <rect width="200" height="130" fill="#0d2247"/>
-            <g opacity=".5" stroke="#3a5a8c" stroke-width="1">
+            <rect width="200" height="130" fill="#0a2a6b"/>
+            <g opacity=".5" stroke="#3f5fa8" stroke-width="1">
               <path d="M0 30h200M0 65h200M0 100h200M40 0v130M100 0v130M160 0v130"/>
             </g>
             <ellipse cx="100" cy="65" rx="46" ry="26" fill="none" stroke="#ffb066" stroke-width="2"/>
-            <circle cx="60" cy="55" r="6" fill="#f2790f"/>
+            <circle cx="60" cy="55" r="6" fill="#ff8400"/>
             <circle cx="100" cy="42" r="6" fill="#ffb066"/>
-            <circle cx="138" cy="58" r="6" fill="#f2790f"/>
+            <circle cx="138" cy="58" r="6" fill="#ff8400"/>
             <circle cx="118" cy="88" r="6" fill="#ffb066"/>
-            <circle cx="80" cy="88" r="6" fill="#f2790f"/>
+            <circle cx="80" cy="88" r="6" fill="#ff8400"/>
           </svg>
         </div>
         <h3 class="project-title">Supplier Master Data Migration</h3>
@@ -432,16 +434,16 @@
       <article class="project-card reveal-up">
         <div class="project-thumb">
           <svg viewBox="0 0 200 130" class="w-full h-full">
-            <rect width="200" height="130" fill="#0d2247"/>
-            <g opacity=".5" stroke="#3a5a8c" stroke-width="1">
+            <rect width="200" height="130" fill="#0a2a6b"/>
+            <g opacity=".5" stroke="#3f5fa8" stroke-width="1">
               <path d="M0 30h200M0 65h200M0 100h200M40 0v130M100 0v130M160 0v130"/>
             </g>
-            <rect x="30" y="34" width="26" height="60" fill="#1f3a63"/>
-            <rect x="62" y="50" width="26" height="44" fill="#1f3a63"/>
-            <rect x="94" y="40" width="26" height="54" fill="#1f3a63"/>
-            <rect x="126" y="58" width="26" height="36" fill="#1f3a63"/>
-            <path d="M30 40h148" stroke="#f2790f" stroke-width="3"/>
-            <circle cx="30" cy="40" r="4" fill="#f2790f"/><circle cx="178" cy="40" r="4" fill="#f2790f"/>
+            <rect x="30" y="34" width="26" height="60" fill="#1c3f8c"/>
+            <rect x="62" y="50" width="26" height="44" fill="#1c3f8c"/>
+            <rect x="94" y="40" width="26" height="54" fill="#1c3f8c"/>
+            <rect x="126" y="58" width="26" height="36" fill="#1c3f8c"/>
+            <path d="M30 40h148" stroke="#ff8400" stroke-width="3"/>
+            <circle cx="30" cy="40" r="4" fill="#ff8400"/><circle cx="178" cy="40" r="4" fill="#ff8400"/>
           </svg>
         </div>
         <h3 class="project-title">Shop Floor &amp; Cutting Room Integration</h3>
@@ -456,15 +458,15 @@
       <article class="project-card reveal-up">
         <div class="project-thumb">
           <svg viewBox="0 0 200 130" class="w-full h-full">
-            <rect width="200" height="130" fill="#0d2247"/>
-            <g opacity=".5" stroke="#3a5a8c" stroke-width="1">
+            <rect width="200" height="130" fill="#0a2a6b"/>
+            <g opacity=".5" stroke="#3f5fa8" stroke-width="1">
               <path d="M0 30h200M0 65h200M0 100h200M40 0v130M100 0v130M160 0v130"/>
             </g>
-            <rect x="56" y="32" width="88" height="58" rx="8" fill="#1f3a63"/>
-            <rect x="66" y="42" width="68" height="6" rx="3" fill="#f2790f"/>
+            <rect x="56" y="32" width="88" height="58" rx="8" fill="#1c3f8c"/>
+            <rect x="66" y="42" width="68" height="6" rx="3" fill="#ff8400"/>
             <rect x="66" y="54" width="44" height="5" rx="2.5" fill="#ffb066"/>
-            <rect x="66" y="64" width="56" height="5" rx="2.5" fill="#3a5a8c"/>
-            <path d="M40 100l30-10 30 10 30-10 30 10" fill="none" stroke="#f2790f" stroke-width="2"/>
+            <rect x="66" y="64" width="56" height="5" rx="2.5" fill="#3f5fa8"/>
+            <path d="M40 100l30-10 30 10 30-10 30 10" fill="none" stroke="#ff8400" stroke-width="2"/>
           </svg>
         </div>
         <h3 class="project-title">CourierApp <span class="text-ink/40 font-normal">— ShipDesk</span></h3>
@@ -480,13 +482,13 @@
       <article class="project-card reveal-up">
         <div class="project-thumb">
           <svg viewBox="0 0 200 130" class="w-full h-full">
-            <rect width="200" height="130" fill="#0d2247"/>
-            <g opacity=".5" stroke="#3a5a8c" stroke-width="1">
+            <rect width="200" height="130" fill="#0a2a6b"/>
+            <g opacity=".5" stroke="#3f5fa8" stroke-width="1">
               <path d="M0 30h200M0 65h200M0 100h200M40 0v130M100 0v130M160 0v130"/>
             </g>
-            <rect x="72" y="30" width="56" height="72" rx="10" fill="#1f3a63"/>
+            <rect x="72" y="30" width="56" height="72" rx="10" fill="#1c3f8c"/>
             <path d="M100 46a12 12 0 0 1 12 12v6h4v26h-32V64h4v-6a12 12 0 0 1 12-12z" fill="none" stroke="#ffb066" stroke-width="2.5"/>
-            <circle cx="100" cy="80" r="4" fill="#f2790f"/>
+            <circle cx="100" cy="80" r="4" fill="#ff8400"/>
           </svg>
         </div>
         <h3 class="project-title">NaVault <span class="text-ink/40 font-normal">— offline Android vault</span></h3>
@@ -522,7 +524,7 @@
         <p class="text-sm text-ink/60 mt-1">Sri Ganesh College of Arts &amp; Science, Salem — Periyar University</p>
       </div>
       <div class="text-right">
-        <p class="font-mono text-sm text-orange font-medium">Jul 2019 — Jun 2022</p>
+        <p class="font-body text-sm text-orange font-bold">Jul 2019 — Jun 2022</p>
         <p class="text-sm text-ink/40 mt-1">CGPA 8.1 / 10</p>
       </div>
     </div>
@@ -530,11 +532,11 @@
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section id="contact" class="section-pad">
-  <div class="max-w-6xl mx-auto px-5 sm:px-6">
-    <div class="contact-panel reveal-up text-center">
+<section id="contact" class="contact-section text-center" data-dark-nav>
+  <div class="max-w-6xl mx-auto px-5 sm:px-6 py-20">
+    <div class="reveal-up">
       <p class="eyebrow eyebrow--light justify-center">06 · Contact</p>
-      <h2 class="font-display text-4xl sm:text-5xl font-extrabold text-cream mt-5 mb-6">Let's talk supply chain.</h2>
+      <h2 class="font-display text-4xl sm:text-5xl font-black text-cream mt-5 mb-6">Let's talk supply chain.</h2>
       <p class="text-cream/60 max-w-lg mx-auto mb-10">
         Open to ERP consulting, implementation and support roles. Reach out any way that's easiest for you.
       </p>
@@ -557,7 +559,7 @@
 <footer class="py-8">
   <div class="max-w-6xl mx-auto px-5 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink/40">
     <p>© <span id="year"></span> Naveenkumar Varadharaj. Built by hand, deployed without a fuss.</p>
-    <p class="font-mono">Coimbatore, Tamil Nadu, India</p>
+    <p class="font-body font-semibold">Coimbatore, Tamil Nadu, India</p>
   </div>
 </footer>
 

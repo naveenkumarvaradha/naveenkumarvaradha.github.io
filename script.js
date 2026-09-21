@@ -12,6 +12,16 @@ ScrollTrigger.create({
   }
 });
 
+/* ---------- nav recolors over dark (navy) sections ---------- */
+document.querySelectorAll('[data-dark-nav]').forEach((section) => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: 'top 90px',
+    end: 'bottom 90px',
+    onToggle: (self) => nav.classList.toggle('on-dark', self.isActive),
+  });
+});
+
 /* ---------- mobile menu ---------- */
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
