@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -16,13 +16,13 @@
     theme: {
       extend: {
         colors: {
-          ink:    { DEFAULT: '#080b13', panel: '#0e1524', line: '#1c2436' },
-          gold:   { DEFAULT: '#c9a15a', soft: '#e3c98c' },
-          teal:   { DEFAULT: '#22d3ee' },
+          ink:    { DEFAULT: '#0a0d15', panel: '#10141f', line: '#1e2436' },
+          amber:  { DEFAULT: '#c9a15a', soft: '#e6cd96', dim: '#8a6f3f' },
           mist:   { DEFAULT: '#aab3c5', dim: '#6b7590' },
+          signal: { DEFAULT: '#22d3ee' },
         },
         fontFamily: {
-          display: ['"Space Grotesk"', 'sans-serif'],
+          display: ['"Fraunces"', 'serif'],
           body: ['Inter', 'sans-serif'],
           mono: ['"JetBrains Mono"', 'monospace'],
         },
@@ -38,11 +38,24 @@
 <div class="noise"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
 
+<!-- ============ COMMAND PALETTE ============ -->
+<div id="palette" class="palette" role="dialog" aria-modal="true" aria-label="Quick navigation" hidden>
+  <div class="palette-backdrop" data-palette-close></div>
+  <div class="palette-panel">
+    <div class="palette-input-row">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="paletteInput" type="text" placeholder="Jump to a section, or open a link…" autocomplete="off" spellcheck="false">
+      <kbd>esc</kbd>
+    </div>
+    <div id="paletteResults" class="palette-results"></div>
+  </div>
+</div>
+
 <!-- ============ NAV ============ -->
 <header id="siteNav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
     <a href="#home" class="font-display font-semibold text-lg text-white tracking-wide">
-      NV<span class="text-gold">.</span>
+      NV<span class="text-amber">.</span>
     </a>
     <nav class="hidden md:flex items-center gap-9 text-sm">
       <a href="#about" class="nav-link" data-nav>About</a>
@@ -52,10 +65,17 @@
       <a href="#building" class="nav-link" data-nav>Building</a>
       <a href="#contact" class="nav-link" data-nav>Contact</a>
     </nav>
-    <a href="assets/Naveenkumar_Varadharaj_Resume.pdf" download
-       class="hidden md:inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full border border-gold/40 text-gold hover:bg-gold hover:text-ink transition-colors duration-300">
-      Resume
-    </a>
+    <div class="hidden md:flex items-center gap-3">
+      <button id="paletteBtn" class="palette-trigger" aria-label="Open quick navigation">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <span>Search</span>
+        <kbd>⌘K</kbd>
+      </button>
+      <a href="assets/Naveenkumar_Varadharaj_Resume.pdf" download
+         class="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full border border-amber/40 text-amber hover:bg-amber hover:text-ink transition-colors duration-300">
+        Résumé
+      </a>
+    </div>
     <button id="menuBtn" class="md:hidden text-white" aria-label="Open menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
@@ -67,7 +87,7 @@
     <a href="#projects" class="mobile-link" data-nav>Projects</a>
     <a href="#building" class="mobile-link" data-nav>Building</a>
     <a href="#contact" class="mobile-link" data-nav>Contact</a>
-    <a href="assets/Naveenkumar_Varadharaj_Resume.pdf" download class="mobile-link text-gold">Download Resume</a>
+    <a href="assets/Naveenkumar_Varadharaj_Resume.pdf" download class="mobile-link text-amber">Download résumé</a>
   </div>
 </header>
 
@@ -80,23 +100,43 @@
     <div class="hero-grid"></div>
   </div>
 
-  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-28 pb-20 w-full">
-    <p class="hero-reveal font-mono text-xs tracking-[0.3em] text-teal uppercase mb-6">Coimbatore, Tamil Nadu · Available for opportunities</p>
-    <h1 class="hero-reveal font-display font-semibold text-white leading-[1.05] text-5xl sm:text-6xl lg:text-7xl mb-6">
-      Naveenkumar<br><span class="text-gradient">Varadharaj</span>
-    </h1>
-    <p class="hero-reveal font-display text-xl sm:text-2xl text-mist mb-4">ERP Functional Consultant <span class="text-gold mx-2">/</span> Apparel &amp; Textile Supply Chain</p>
-    <p class="hero-reveal max-w-xl text-base leading-relaxed text-mist/80 mb-10">
-      I turn tangled procurement, inventory and shop-floor processes into configured,
-      automated ERP workflows &mdash; on Datatex and WFX &mdash; that run without someone
-      re-keying the same order twice.
-    </p>
-    <div class="hero-reveal flex flex-wrap items-center gap-4">
-      <a href="#contact" class="btn-primary">Get in touch</a>
-      <a href="#experience" class="btn-ghost">See the work ↓</a>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-20 w-full">
+    <div class="grid lg:grid-cols-[1.3fr_.7fr] gap-16 items-end">
+      <div>
+        <p class="hero-reveal flex items-center gap-2 font-mono text-xs tracking-[0.25em] text-mist/60 uppercase mb-7">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="statusText">Coimbatore, IN</span>
+          <span class="text-ink-line">·</span>
+          <span id="localClock" class="tabular-nums">--:--</span>
+          <span class="text-ink-line">·</span>
+          <span>open to opportunities</span>
+        </p>
+        <h1 class="hero-reveal font-display font-medium text-white leading-[0.98] text-[13vw] sm:text-7xl lg:text-8xl mb-7 -ml-1">
+          Naveenkumar<br><em class="text-gradient not-italic">Varadharaj</em>
+        </h1>
+        <p class="hero-reveal font-display italic text-xl sm:text-2xl text-mist mb-5">ERP Functional Consultant, apparel &amp; textile supply chain</p>
+        <p class="hero-reveal max-w-xl text-base leading-relaxed text-mist/80 mb-10">
+          I turn tangled procurement, inventory and shop-floor processes into configured,
+          automated ERP workflows &mdash; on Datatex and WFX &mdash; that run without someone
+          re-keying the same order twice.
+        </p>
+        <div class="hero-reveal flex flex-wrap items-center gap-4">
+          <a href="#contact" class="btn-primary">Get in touch</a>
+          <a href="#experience" class="btn-ghost">See the work ↓</a>
+        </div>
+      </div>
+
+      <!-- spec strip -->
+      <div class="hero-reveal spec-strip">
+        <div class="spec-row"><span>Role</span><strong>ERP Functional Consultant</strong></div>
+        <div class="spec-row"><span>Focus</span><strong>Apparel &amp; textile supply chain</strong></div>
+        <div class="spec-row"><span>Platforms</span><strong>Datatex · WFX</strong></div>
+        <div class="spec-row"><span>Experience</span><strong>3+ years</strong></div>
+        <div class="spec-row"><span>Based</span><strong>Coimbatore, India</strong></div>
+      </div>
     </div>
 
-    <div class="hero-reveal flex items-center gap-5 mt-14">
+    <div class="hero-reveal flex items-center gap-5 mt-16">
       <a href="https://www.linkedin.com/in/naveenkumarvaradharaj/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
       </a>
@@ -107,7 +147,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6.5h18v11H3z"/><path d="M3 7l9 6 9-6"/></svg>
       </a>
       <span class="w-px h-5 bg-ink-line"></span>
-      <a href="tel:+919943584370" class="font-mono text-sm text-mist/70 hover:text-teal transition-colors">+91 99435 84370</a>
+      <a href="tel:+919943584370" class="font-mono text-sm text-mist/70 hover:text-amber transition-colors">+91 99435 84370</a>
     </div>
   </div>
 
@@ -118,30 +158,29 @@
 <section id="about" class="section-pad border-t border-ink-line">
   <div class="max-w-6xl mx-auto px-6">
     <p class="eyebrow reveal-up">01 · About</p>
-    <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-14 mt-6">
-      <p class="reveal-up text-2xl sm:text-3xl font-display font-medium text-white leading-snug">
-        ERP Techno-Functional Consultant with 3+ years delivering end-to-end module
-        rollouts across procurement, inventory, WMS, EDI, MES and production planning
-        for the apparel &amp; textile industry &mdash; bridging business requirements
-        and system configuration, from UAT to a stable go-live.
-      </p>
-      <div class="reveal-up grid grid-cols-2 gap-6">
-        <div class="stat-card">
-          <p class="stat-num" data-count="3" data-suffix="+">0</p>
-          <p class="stat-label">Years in ERP support &amp; implementation</p>
-        </div>
-        <div class="stat-card">
-          <p class="stat-num" data-count="500" data-suffix="+">0</p>
-          <p class="stat-label">Buyer POs automated per month</p>
-        </div>
-        <div class="stat-card">
-          <p class="stat-num" data-count="300" data-suffix="+">0</p>
-          <p class="stat-label">Supplier records migrated, zero integrity failures</p>
-        </div>
-        <div class="stat-card">
-          <p class="stat-num" data-count="6" data-suffix="">0</p>
-          <p class="stat-label">Core Datatex modules implemented end-to-end</p>
-        </div>
+    <p class="reveal-up font-display text-2xl sm:text-3xl lg:text-4xl font-medium text-white leading-snug mt-6 max-w-4xl">
+      ERP Techno-Functional Consultant with 3+ years delivering end-to-end module
+      rollouts across procurement, inventory, WMS, EDI, MES and production planning
+      for the apparel &amp; textile industry &mdash; bridging business requirements
+      and system configuration, from UAT to a stable go-live.
+    </p>
+
+    <div class="reveal-up ledger mt-16">
+      <div class="ledger-row">
+        <span class="ledger-num" data-count="3" data-suffix="+">0</span>
+        <span class="ledger-label">Years in ERP support &amp; implementation</span>
+      </div>
+      <div class="ledger-row">
+        <span class="ledger-num" data-count="500" data-suffix="+">0</span>
+        <span class="ledger-label">Buyer POs automated per month</span>
+      </div>
+      <div class="ledger-row">
+        <span class="ledger-num" data-count="300" data-suffix="+">0</span>
+        <span class="ledger-label">Supplier records migrated, zero integrity failures</span>
+      </div>
+      <div class="ledger-row">
+        <span class="ledger-num" data-count="6" data-suffix="">0</span>
+        <span class="ledger-label">Core Datatex modules implemented end-to-end</span>
       </div>
     </div>
   </div>
@@ -151,11 +190,11 @@
 <section id="experience" class="section-pad border-t border-ink-line">
   <div class="max-w-6xl mx-auto px-6">
     <p class="eyebrow reveal-up">02 · Experience</p>
-    <div class="reveal-up flex flex-wrap items-baseline justify-between gap-3 mt-6 mb-14">
-      <h2 class="font-display text-3xl sm:text-4xl font-semibold text-white">ERP Support Executive</h2>
-      <span class="font-mono text-sm text-teal">Nov 2022 — Present</span>
+    <div class="reveal-up flex flex-wrap items-baseline justify-between gap-3 mt-6 mb-1">
+      <h2 class="font-display text-3xl sm:text-4xl font-medium text-white">ERP Support Executive</h2>
+      <span class="font-mono text-sm text-amber">Nov 2022 — Present</span>
     </div>
-    <p class="reveal-up text-sm text-mist/70 -mt-10 mb-14">CTL India Pvt. Ltd. <span class="text-mist/40">(formerly Aquarelle India Pvt. Ltd.)</span> — TROPIC, Coimbatore</p>
+    <p class="reveal-up text-sm text-mist/70 mb-14">CTL India Pvt. Ltd. <span class="text-mist/40">(formerly Aquarelle India Pvt. Ltd.)</span> — TROPIC, Coimbatore</p>
 
     <div class="space-y-16">
 
@@ -201,19 +240,19 @@
 <section id="skills" class="section-pad border-t border-ink-line">
   <div class="max-w-6xl mx-auto px-6">
     <p class="eyebrow reveal-up">03 · Skills</p>
-    <h2 class="reveal-up font-display text-3xl sm:text-4xl font-semibold text-white mt-6 mb-14">Key skills &amp; technical expertise</h2>
+    <h2 class="reveal-up font-display text-3xl sm:text-4xl font-medium text-white mt-6 mb-14">Key skills &amp; technical expertise</h2>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="skill-card reveal-up">
+    <div class="spec-sheet">
+      <div class="spec-sheet-row reveal-up">
         <h4 class="skill-cat">ERP Platforms</h4>
         <div class="chips">
-          <span class="chip chip-gold">Datatex ERP</span>
-          <span class="chip chip-gold">WFX</span>
-          <span class="chip chip-gold">Opta-Cut</span>
-          <span class="chip chip-gold">Opta-Floor</span>
+          <span class="chip chip-amber">Datatex ERP</span>
+          <span class="chip chip-amber">WFX</span>
+          <span class="chip chip-amber">Opta-Cut</span>
+          <span class="chip chip-amber">Opta-Floor</span>
         </div>
       </div>
-      <div class="skill-card reveal-up">
+      <div class="spec-sheet-row reveal-up">
         <h4 class="skill-cat">Functional Modules</h4>
         <div class="chips">
           <span class="chip">Procurement</span><span class="chip">Inventory</span><span class="chip">Sales</span>
@@ -221,27 +260,27 @@
           <span class="chip">WMS</span><span class="chip">MES</span>
         </div>
       </div>
-      <div class="skill-card reveal-up">
+      <div class="spec-sheet-row reveal-up">
         <h4 class="skill-cat">Implementation</h4>
         <div class="chips">
           <span class="chip">Requirements Analysis</span><span class="chip">Workflow Configuration</span>
           <span class="chip">Data Migration</span><span class="chip">UAT Facilitation</span><span class="chip">Go-Live Support</span>
         </div>
       </div>
-      <div class="skill-card reveal-up">
+      <div class="spec-sheet-row reveal-up">
         <h4 class="skill-cat">Integration &amp; Automation</h4>
         <div class="chips">
           <span class="chip">EDI Order Workflows</span><span class="chip">Buyer PO Automation</span>
           <span class="chip">Third-Party Integration</span><span class="chip">WMS Connectivity</span>
         </div>
       </div>
-      <div class="skill-card reveal-up">
+      <div class="spec-sheet-row reveal-up">
         <h4 class="skill-cat">Databases &amp; Reporting</h4>
         <div class="chips">
           <span class="chip">SQL Server</span><span class="chip">MySQL</span><span class="chip">SSRS</span>
         </div>
       </div>
-      <div class="skill-card reveal-up">
+      <div class="spec-sheet-row reveal-up">
         <h4 class="skill-cat">Infrastructure</h4>
         <div class="chips">
           <span class="chip">VMware ESXi</span><span class="chip">Fortinet</span><span class="chip">Sophos Firewall</span>
@@ -249,13 +288,12 @@
           <span class="chip">Windows Server</span><span class="chip">RHEL</span><span class="chip">JBoss</span>
         </div>
       </div>
-    </div>
-
-    <div class="reveal-up mt-8 skill-card">
-      <h4 class="skill-cat">Tools</h4>
-      <div class="chips">
-        <span class="chip">Jira</span><span class="chip">TeamViewer</span><span class="chip">AnyDesk</span>
-        <span class="chip">MS Excel</span><span class="chip">MS Word</span>
+      <div class="spec-sheet-row reveal-up">
+        <h4 class="skill-cat">Tools</h4>
+        <div class="chips">
+          <span class="chip">Jira</span><span class="chip">TeamViewer</span><span class="chip">AnyDesk</span>
+          <span class="chip">MS Excel</span><span class="chip">MS Word</span>
+        </div>
       </div>
     </div>
   </div>
@@ -265,7 +303,7 @@
 <section id="projects" class="section-pad border-t border-ink-line">
   <div class="max-w-6xl mx-auto px-6">
     <p class="eyebrow reveal-up">04 · Key Projects</p>
-    <h2 class="reveal-up font-display text-3xl sm:text-4xl font-semibold text-white mt-6 mb-14">Selected engagements</h2>
+    <h2 class="reveal-up font-display text-3xl sm:text-4xl font-medium text-white mt-6 mb-14">Selected engagements</h2>
 
     <div class="grid md:grid-cols-2 gap-6">
       <div class="project-card reveal-up">
@@ -292,19 +330,31 @@
   </div>
 </section>
 
-<!-- ============ CURRENTLY BUILDING ============ -->
+<!-- ============ CURRENTLY BUILDING (dynamic GitHub data) ============ -->
 <section id="building" class="section-pad border-t border-ink-line">
   <div class="max-w-6xl mx-auto px-6">
     <p class="eyebrow reveal-up">05 · Outside the ERP desk</p>
-    <h2 class="reveal-up font-display text-3xl sm:text-4xl font-semibold text-white mt-6 mb-6">Currently building</h2>
+    <div class="reveal-up flex flex-wrap items-end justify-between gap-6 mt-6 mb-6">
+      <h2 class="font-display text-3xl sm:text-4xl font-medium text-white">Currently building</h2>
+      <div id="ghStats" class="gh-stats font-mono text-xs text-mist/50">
+        <span data-gh="repos">·· repos</span>
+        <span class="text-ink-line">/</span>
+        <span data-gh="followers">·· followers</span>
+        <span class="text-ink-line">/</span>
+        <span data-gh="since">on GitHub since ····</span>
+      </div>
+    </div>
     <p class="reveal-up text-mist/75 max-w-2xl mb-10">
       When I'm not configuring ERP workflows, I build full-stack apps — Java / Spring
       Boot on the backend, React / TypeScript on the front. Latest ones:
     </p>
 
-    <a href="https://github.com/naveenkumarvaradha/naveenkumarvaradha.github.io/releases/tag/navault-v0.2.0" target="_blank" rel="noopener" class="build-card reveal-up">
+    <a href="https://github.com/naveenkumarvaradha/naveenkumarvaradha.github.io/releases/tag/navault-v0.2.0" id="navaultCard" target="_blank" rel="noopener" class="build-card reveal-up">
       <div>
-        <h3 class="font-display text-xl font-semibold text-white mb-2">NaVault <span class="text-mist/50 font-normal text-base">— offline Android vault</span></h3>
+        <h3 class="font-display text-xl font-semibold text-white mb-2 flex items-center gap-3 flex-wrap">
+          NaVault <span class="text-mist/50 font-normal text-base">— offline Android vault</span>
+          <span id="navaultBadge" class="release-badge">v0.2.0</span>
+        </h3>
         <p class="text-sm text-mist/70 max-w-xl">Fully offline password/bank-account/card/document vault for Android — hybrid Rust (AES-256-GCM + Argon2id encryption engine) and Java UI, biometric unlock via Android Keystore/StrongBox, zero network permissions. Source is private; an APK build is available to try.</p>
         <div class="chips mt-4">
           <span class="chip">Rust</span><span class="chip">Java</span><span class="chip">Android</span>
@@ -326,7 +376,7 @@
       <span class="arrow">↗</span>
     </a>
 
-    <a href="https://github.com/naveenkumarvaradha" target="_blank" rel="noopener" class="reveal-up inline-flex items-center gap-2 mt-8 text-sm text-teal hover:text-white transition-colors">
+    <a href="https://github.com/naveenkumarvaradha" target="_blank" rel="noopener" class="reveal-up inline-flex items-center gap-2 mt-8 text-sm text-amber hover:text-white transition-colors">
       See more on GitHub <span aria-hidden="true">→</span>
     </a>
   </div>
@@ -338,11 +388,11 @@
     <p class="eyebrow reveal-up">06 · Education</p>
     <div class="reveal-up mt-6 flex flex-wrap items-baseline justify-between gap-3 max-w-3xl">
       <div>
-        <h3 class="font-display text-xl font-semibold text-white">Bachelor of Computer Applications (BCA)</h3>
+        <h3 class="font-display text-xl font-medium text-white">Bachelor of Computer Applications (BCA)</h3>
         <p class="text-sm text-mist/70 mt-1">Sri Ganesh College of Arts &amp; Science, Salem — Periyar University</p>
       </div>
       <div class="text-right">
-        <p class="font-mono text-sm text-teal">Jul 2019 — Jun 2022</p>
+        <p class="font-mono text-sm text-amber">Jul 2019 — Jun 2022</p>
         <p class="text-sm text-mist/50 mt-1">CGPA 8.1 / 10</p>
       </div>
     </div>
@@ -353,9 +403,15 @@
 <section id="contact" class="section-pad border-t border-ink-line">
   <div class="max-w-6xl mx-auto px-6 text-center">
     <p class="eyebrow reveal-up justify-center">07 · Contact</p>
-    <h2 class="reveal-up font-display text-4xl sm:text-5xl font-semibold text-white mt-6 mb-6">Let's talk supply chain.</h2>
-    <p class="reveal-up text-mist/70 max-w-lg mx-auto mb-10">
+    <h2 class="reveal-up font-display text-4xl sm:text-5xl font-medium text-white mt-6 mb-6">Let's talk supply chain.</h2>
+    <p class="reveal-up text-mist/70 max-w-lg mx-auto mb-4">
       Open to ERP consulting, implementation and support roles. Reach out any way that's easiest for you.
+    </p>
+    <p class="reveal-up font-mono text-xs text-mist/40 uppercase tracking-[0.2em] mb-10 flex items-center justify-center gap-2">
+      <span class="status-dot" id="statusDot2"></span>
+      <span id="statusText2">Coimbatore, IN</span>
+      <span class="text-ink-line">·</span>
+      <span id="localClock2" class="tabular-nums">--:--</span> local time
     </p>
     <div class="reveal-up flex flex-wrap items-center justify-center gap-4 mb-14">
       <a href="mailto:vnaveenkumar0802@gmail.com" class="btn-primary">vnaveenkumar0802@gmail.com</a>
@@ -374,7 +430,7 @@
 
 <footer class="border-t border-ink-line py-8">
   <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-mist/40">
-    <p>© <span id="year"></span> Naveenkumar Varadharaj. Built by hand, deployed without a fuss.</p>
+    <p>© <span id="year"></span> Naveenkumar Varadharaj. <span id="lastShipped">Built by hand, deployed without a fuss.</span></p>
     <p class="font-mono">Coimbatore, Tamil Nadu, India</p>
   </div>
 </footer>
