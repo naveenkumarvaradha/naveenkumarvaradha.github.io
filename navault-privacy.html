@@ -71,15 +71,26 @@
       <li>Is never shared with any third-party service, SDK, or analytics/advertising network.</li>
       <li>Is not backed up to any cloud service by NaVault itself (Android's own system backup is explicitly disabled for this app).</li>
     </ul>
+    <p class="leading-relaxed mt-3">
+      The encrypted database lives in one visible folder on your phone's own storage,
+      <strong class="text-white">Internal storage/NaVault/VaultData</strong>, so you can see and
+      manage it with any file manager. That also means any app you have granted
+      &ldquo;All files access&rdquo; can see (or delete) the file; its contents stay encrypted and
+      unreadable without your master password.
+    </p>
   </section>
 
   <section class="mb-10">
     <h2 class="font-display text-xl font-semibold text-white mb-3">Local backups</h2>
-    <p class="leading-relaxed">
-      If you enable backups (Settings &gt; Backup Folder), NaVault writes an encrypted
-      copy of your vault database to a folder you choose on your device's own storage,
-      on a rolling 7-day retention schedule. This file never leaves your device unless
-      you move it yourself — NaVault takes no part in that.
+    <p class="leading-relaxed mb-3">All backups are encrypted copies of your vault and stay on your device:</p>
+    <ul class="list-disc list-inside space-y-1.5 leading-relaxed">
+      <li><strong class="text-white">Automatic private copy</strong>: NaVault keeps its latest copy in the app's own private storage, which other apps can't access. It lets you restore your vault if the NaVault folder is deleted, and is removed if you uninstall the app.</li>
+      <li><strong class="text-white">Automatic backups</strong> (optional, Settings): one dated copy per day in Internal storage/NaVault/Backups, keeping the last 7 days.</li>
+      <li><strong class="text-white">Save backup to&hellip;</strong> (Settings): writes a copy wherever you choose in Android's own save screen, such as an SD card, a USB drive or another app.</li>
+    </ul>
+    <p class="leading-relaxed mt-3">
+      None of these files leave your device unless you move them yourself, and NaVault takes
+      no part in that.
     </p>
   </section>
 
@@ -103,8 +114,8 @@
             <td class="py-3">To unlock the vault with your device's fingerprint/face unlock instead of typing your master password every time. Biometric data is handled entirely by the Android OS (Keystore) — NaVault never sees or stores it.</td>
           </tr>
           <tr>
-            <td class="py-3 pr-4 whitespace-nowrap">Storage / manage external storage</td>
-            <td class="py-3">To let you choose a backup folder, restore from a backup file, and export or import CSV files you explicitly select. NaVault only reads/writes files you point it to.</td>
+            <td class="py-3 pr-4 whitespace-nowrap">All files access (storage)</td>
+            <td class="py-3">To keep your vault, backups and exports together in one visible Internal storage/NaVault folder, and to read the files you pick when restoring a backup or importing a CSV or PDF. NaVault writes only inside that NaVault folder, its own private storage, or a location you choose in Android's save screen.</td>
           </tr>
         </tbody>
       </table>
@@ -120,7 +131,7 @@
     <h2 class="font-display text-xl font-semibold text-white mb-3">On-device features that might sound like they need a network — they don't</h2>
     <ul class="list-disc list-inside space-y-1.5 leading-relaxed">
       <li><strong class="text-white">Text recognition (OCR)</strong> on scanned documents uses a model bundled inside the app itself, not a cloud API. No image or text is ever uploaded anywhere.</li>
-      <li><strong class="text-white">Optional AI-assisted text import</strong> runs a small language model entirely on-device. No text you paste is sent anywhere.</li>
+      <li><strong class="text-white">PDF export and import</strong> are created and read by NaVault's own code on your device, including the optional password protection.</li>
       <li><strong class="text-white">Barcode/QR generation and scanning</strong> for Passes is done entirely locally.</li>
     </ul>
   </section>
@@ -130,8 +141,9 @@
     <p class="leading-relaxed mb-3">The only way data leaves NaVault is if you explicitly choose to:</p>
     <ul class="list-disc list-inside space-y-1.5 leading-relaxed">
       <li><strong class="text-white">Share</strong> a document/page to another app you pick (e.g. WhatsApp, Gmail) via Android's own share sheet.</li>
-      <li><strong class="text-white">Download</strong> a decrypted copy of a document to your device's Downloads folder.</li>
-      <li><strong class="text-white">Export</strong> your data as a plaintext JSON/CSV file, which you then control entirely.</li>
+      <li><strong class="text-white">Download</strong> a decrypted copy of a document to Internal storage/NaVault/Exports.</li>
+      <li><strong class="text-white">Export</strong> your data as a plaintext JSON/CSV file, or as a PDF (optionally password-protected), which you then control entirely.</li>
+      <li><strong class="text-white">Save backup to&hellip;</strong> an encrypted backup file in a location you choose.</li>
     </ul>
     <p class="leading-relaxed mt-3">None of these actions are automatic — each requires you to explicitly tap share/download/export.</p>
   </section>
